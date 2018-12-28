@@ -3,7 +3,7 @@
     <parent>
         <artifactId>RoaringBitmapParent</artifactId>
         <groupId>org.roaringbitmap</groupId>
-        <version>0.7.36</version>
+        <version>0.7.36-kylin-r1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -12,55 +12,12 @@
 
     <properties>
         <checkstyle.configLocation>${project.parent.basedir}/roaringbitmap/style/roaring_google_checks.xml</checkstyle.configLocation>
-        <java11.sourceDirectory>${project.basedir}/src/main/java11</java11.sourceDirectory>
-        <java11.build.outputDirectory>${project.build.directory}/classes-java11</java11.build.outputDirectory>
 <!--        <maven.javadoc.skip>true</maven.javadoc.skip> -->
     </properties>
 
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-antrun-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>compile-java11</id>
-                        <phase>compile</phase>
-                        <configuration>
-                            <tasks>
-                                <mkdir dir="${java11.build.outputDirectory}" />
-                                <javac srcdir="${java11.sourceDirectory}" destdir="${java11.build.outputDirectory}" classpath="${project.build.outputDirectory}" includeantruntime="false" />
-                            </tasks>
-                        </configuration>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>3.1.0</version>
-                <executions>
-                    <execution>
-                        <id>copy-resources</id>
-                        <phase>prepare-package</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <configuration>
-                            <outputDirectory>${project.build.outputDirectory}/META-INF/versions/11</outputDirectory>
-                            <resources>
-                                <resource>
-                                    <directory>${java11.build.outputDirectory}</directory>
-                                </resource>
-                            </resources>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
