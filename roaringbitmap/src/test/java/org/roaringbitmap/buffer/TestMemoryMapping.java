@@ -30,6 +30,7 @@ import java.util.concurrent.TimeUnit;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.roaringbitmap.IntIterator;
 import org.roaringbitmap.RoaringBitmap;
@@ -654,6 +655,7 @@ public class TestMemoryMapping {
   }
 
   @Test
+  @Ignore
   public void unions() {
     System.out.println("[TestMemoryMapping] testing Unions");
     for (int k = 0; k < mappedbitmaps.size() - 4; k += 4) {
