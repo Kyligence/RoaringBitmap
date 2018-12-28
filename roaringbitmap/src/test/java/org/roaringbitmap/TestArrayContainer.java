@@ -505,7 +505,7 @@ public class TestArrayContainer {
     @Test
     public void testNextValueBetweenRuns() {
         Container container = new ArrayContainer().iadd(64, 129).iadd(256, 321);
-        assertTrue(container instanceof ArrayContainer);
+        assertTrue(container instanceof BitmapContainer);
         assertEquals(64, container.nextValue((short)0));
         assertEquals(64, container.nextValue((short)64));
         assertEquals(65, container.nextValue((short)65));
@@ -517,7 +517,7 @@ public class TestArrayContainer {
     @Test
     public void testNextValue3() {
         Container container = new ArrayContainer().iadd(64, 129).iadd(200, 501).iadd(5000, 5201);
-        assertTrue(container instanceof ArrayContainer);
+        assertTrue(container instanceof BitmapContainer);
         assertEquals(64, container.nextValue((short)0));
         assertEquals(64, container.nextValue((short)63));
         assertEquals(64, container.nextValue((short)64));
@@ -548,7 +548,7 @@ public class TestArrayContainer {
     @Test
     public void testPreviousValue2() {
         Container container = new ArrayContainer().iadd(64, 129).iadd(200, 501).iadd(5000, 5201);
-        assertTrue(container instanceof ArrayContainer);
+        assertTrue(container instanceof BitmapContainer);
         assertEquals(-1, container.previousValue((short)0));
         assertEquals(-1, container.previousValue((short)63));
         assertEquals(64, container.previousValue((short)64));

@@ -57,7 +57,7 @@ public class TestAdversarialInputs {
 
 	@Test
 	public void testInputGoodFile1() throws IOException {
-		File file = copy("testdata/bitmapwithruns.bin");
+		File file = copy("testdata/bitmapwithoutruns.bin");
 		MutableRoaringBitmap rb = new MutableRoaringBitmap();
 		// should not throw an exception
 		rb.deserialize(new DataInputStream(new FileInputStream(file)));
