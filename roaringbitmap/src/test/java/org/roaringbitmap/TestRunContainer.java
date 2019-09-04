@@ -86,9 +86,9 @@ public class TestRunContainer {
     setb.add(b1);
 
     RunContainer r2 = new RunContainer();
-    r2 = (RunContainer) r2.iadd(0, 128);
+    r2 = (RunContainer) r2.iadd(0, 4096);
     Container b2 = new ArrayContainer();
-    b2 = b2.iadd(0, 128);
+    b2 = b2.iadd(0, 4096);
     set.add(r2);
     setb.add(b2);
     assertTrue(r2.equals(b2));
