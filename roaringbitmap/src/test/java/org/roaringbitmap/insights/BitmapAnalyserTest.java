@@ -1,7 +1,6 @@
 package org.roaringbitmap.insights;
 
 import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.roaringbitmap.SeededTestData;
 import org.roaringbitmap.RoaringBitmap;
@@ -27,7 +26,6 @@ public class BitmapAnalyserTest {
   }
 
   @Test
-  @Ignore
   public void analyseRandomBitmap() {
     double delta = 0.1;
     double runFraction = 0.1;
@@ -43,7 +41,6 @@ public class BitmapAnalyserTest {
   }
 
   @Test
-  @Ignore
   public void analyseRandomBitmaps() {
     double delta = 0.1;
     double runFraction = 0.05;

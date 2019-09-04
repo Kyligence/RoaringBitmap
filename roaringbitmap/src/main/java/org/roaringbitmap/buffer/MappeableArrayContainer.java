@@ -21,7 +21,7 @@ import static org.roaringbitmap.buffer.BufferUtil.toIntUnsigned;
 public final class MappeableArrayContainer extends MappeableContainer implements Cloneable {
   private static final int DEFAULT_INIT_SIZE = 4;
   private static final int ARRAY_LAZY_LOWERBOUND = 1024;
-  protected static final int DEFAULT_MAX_SIZE = 128; // containers with DEFAULT_MAX_SZE or less
+  protected static final int DEFAULT_MAX_SIZE = 4096; // containers with DEFAULT_MAX_SZE or less
                                                       // integers should be ArrayContainers
 
   private static final long serialVersionUID = 1L;

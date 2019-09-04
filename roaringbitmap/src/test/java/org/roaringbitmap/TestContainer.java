@@ -287,7 +287,7 @@ public class TestContainer {
     final short[] content = {1, 3, 5, 7, 9};
     Container c = makeContainer(content);
     c = c.inot(4, 1000);
-    assertTrue(c instanceof BitmapContainer);
+    assertTrue(c instanceof ArrayContainer);
     assertEquals(999 - 4 + 1 - 3 + 2, c.getCardinality());
     c = c.inot(4, 1000); // back
     assertTrue(checkContent(c, content));
@@ -495,7 +495,7 @@ public class TestContainer {
     final short[] content = {1, 3, 5, 7, 9};
     final Container c = makeContainer(content);
     final Container c1 = c.not(4, 1000);
-    assertTrue(c1 instanceof BitmapContainer);
+    assertTrue(c1 instanceof ArrayContainer);
     assertEquals(999 - 4 + 1 - 3 + 2, c1.getCardinality());
     final Container c2 = c1.not(4, 1000); // back
     assertTrue(checkContent(c2, content));
@@ -946,21 +946,21 @@ public class TestContainer {
   @Test
   public void transitionTest() {
     Container c = new ArrayContainer();
-    for (int i = 0; i < 128; ++i) {
+    for (int i = 0; i < 4096; ++i) {
       c = c.add((short) i);
     }
-    assertEquals(c.getCardinality(), 128);
+    assertEquals(c.getCardinality(), 4096);
     assertTrue(c instanceof ArrayContainer);
-    for (int i = 0; i < 128; ++i) {
+    for (int i = 0; i < 4096; ++i) {
       c = c.add((short) i);
     }
-    assertEquals(c.getCardinality(), 128);
+    assertEquals(c.getCardinality(), 4096);
     assertTrue(c instanceof ArrayContainer);
-    c = c.add((short) 128);
-    assertEquals(c.getCardinality(), 129);
+    c = c.add((short) 4096);
+    assertEquals(c.getCardinality(), 4097);
     assertTrue(c instanceof BitmapContainer);
-    c = c.remove((short) 128);
-    assertEquals(c.getCardinality(), 128);
+    c = c.remove((short) 4096);
+    assertEquals(c.getCardinality(), 4096);
     assertTrue(c instanceof ArrayContainer);
   }
 
