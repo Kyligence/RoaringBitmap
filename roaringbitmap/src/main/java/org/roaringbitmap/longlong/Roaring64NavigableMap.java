@@ -169,8 +169,12 @@ public class Roaring64NavigableMap implements Externalizable, LongBitmapDataProv
 
   // Package-friendly: for the sake of unit-testing
   // @VisibleForTesting
-  NavigableMap<Integer, BitmapDataProvider> getHighToBitmap() {
+  public NavigableMap<Integer, BitmapDataProvider> getHighToBitmap() {
     return highToBitmap;
+  }
+
+  public void putBitmap(Integer key, RoaringBitmap value) {
+    highToBitmap.put(key, value);
   }
 
   // Package-friendly: for the sake of unit-testing
